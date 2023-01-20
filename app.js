@@ -4,7 +4,7 @@ const debug = require('debug')('app');
 const morgan = require('morgan'); // morgan gives information about the page
 const path = require('path');
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000; // finds port number from nodemon config in package.json
 const app = express();
 
 app.use(morgan('tiny')); // tiny sets the amount of data returned
