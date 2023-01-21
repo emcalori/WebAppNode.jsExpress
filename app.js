@@ -10,8 +10,12 @@ const app = express();
 app.use(morgan('tiny')); // tiny sets the amount of data returned
 app.use(express.static(path.join(__dirname, '/public/'))); //sets up middle wear to deal with static files i.e. the index html file
 
+app.set('views','./src/views');
+app.set('view engine', 'ejs');
+
 app.get('/', (req, res) => {
-    res.send('Hello from my app'); // not run when static page is defined
+    res.render('index', {title: 'Globomantics!'});
+    // res.send('Hello from my app'); // not run when static page is defined
 });
 
 app.listen(PORT, () => {
