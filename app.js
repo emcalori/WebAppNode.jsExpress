@@ -14,7 +14,7 @@ app.set('views','./src/views');
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
-    res.render('index', {title: 'Globomantics!'});
+    res.render('index.ejs', {title: 'Globomantics!', data: ["a","b","c"] });
     // res.send('Hello from my app'); // not run when static page is defined
 });
 
